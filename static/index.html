@@ -1,0 +1,307 @@
+<style>
+    html {
+        background-color: rgba(216, 36, 132, 0.884);
+    }
+</style>
+<title>Assembling Feminist Knowledges</title>
+<html>
+    <div id="mynetwork"></div>
+</html>
+
+
+<script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+
+<script>
+    // create an array with nodes
+    var nodes = new vis.DataSet([
+    // John Law
+    { id: 1, label: "John\nLaw", shape: "circle"},
+    { id: 2, label: "STS\nas\nMethod"},
+    { id: 3, label: "Seeing\nLike\na\nSurvey"},
+
+    // Donna Haraway
+    { id: 4, label: "Donna\nHaraway", shape: "circle"},
+    { id: 5, label: "Modest_Witness"},
+    { id: 6, label: "Tools for\nMultispecies\nFutures"},
+    { id: 7, label: "A\nManifesto\nfor\nCyborgs"},
+    { id: 8, label: "Informatics\nof\nDomination"},
+    { id: 9, label: "Speculative\nFabulation"},
+
+    // Joe Dumit
+    { id: 10, label: "Joe\nDumit", shape: "circle"},
+    { id: 11, label: "Writing\nthe\nImplosion"},
+    { id: 12, label: "Game Design\nas\nSTS Research"},
+
+    // Andrew Culp
+    { id: 13, label: "Andrew\nCulp", shape: "circle"},
+
+    // Claire Evans
+    { id: 14, label: "Claire\nEvans", shape: "circle"},
+    { id: 15, label: "A Feeling\nfor the\nOrganism"},
+
+    // Linda Hogan
+    { id: 16, label: "Linda\nHogan", shape: "circle"},
+    { id: 17, label: "A Different\nYield"},
+
+    // Banu Subramaniam
+    { id: 18, label: "Banu\nSubramaniam", shape: "circle"},
+    { id: 19, label: "Moored\nMetamorphoses"},
+
+    // Karen Barad
+    { id: 20, label: "Karen\nBarad", shape: "circle"},
+    { id: 21, label: "Posthuman\nPerformativity"},
+    { id: 90, label: "Meeting\nThe Universe\nHalfway"},
+
+    // Tommy Pico
+    { id: 22, label: "Tommy\nPico", shape: "circle"},
+    { id: 23, label: "Nature\nPoem"},
+
+    // Leroy Little Bear
+    { id: 26, label: "Leroy\nLittle\nBear", shape: "circle"},
+    { id: 27, label: "Conceptual Anatomy\nof a\nblackfoot world"},
+
+    // Ryan Heavy Head
+    { id: 28, label: "Ryan\nHeavy\nHead", shape: "circle"},
+
+    // Rebecca Coleman
+    { id: 29, label: "Rebecca\nColeman", shape: "circle"},
+    { id: 30, label: "Glitterworlds"},
+
+    // Teen Vogue
+    { id: 31, label: "Teen\nVogue", shape: "circle"},
+    { id: 32, label: "The History\nof using\nglitter"},
+
+    // Illinois State Museum
+    { id: 33, label: "Illinois\nState\nMuseum", shape: "circle"},
+    { id: 34, label: "Trade Beads"},
+
+    // Ruth Cuthan
+    { id: 35, label: "Ruth\nCuthan", shape: "circle"},
+    { id: 36, label: "Trading Series"},
+    
+    // Rhiannon Johnson
+    { id: 37, label: "Rhiannon\nJohnson", shape: "circle"},
+    { id: 38, label: "So darn cute"},
+
+    // Alison Place
+    { id: 39, label: "Alison\nPlace", shape: "circle"},
+    { id: 40, label: "Feminist\nDesigner"},
+
+    // Keller Easterling
+    { id: 41, label: "Keller\nEasterling", shape: "circle"},
+    { id: 42, label: "Medium Design"},
+
+    // Drew Endy
+    { id: 43, label: "Drew\nEndy", shape: "circle"},
+
+    // Melissa Potter
+    { id: 44, label: "Melissa\nPotter", shape: "circle"},
+    { id: 45, label: "Material\nEngagements"},
+
+    // Jessie Daniels
+    { id: 46, label: "Jessia\nDaniels", shape: "circle"},
+    { id: 47, label: "Rethinking\nCyberfeminism"},
+
+    // Catherine D'Ignazio
+    { id: 48, label: "Catherine\nD'Ignazio", shape: "circle"},
+    { id: 49, label: "Data Feminism"},
+
+    // Lauren F. Klein
+    { id: 50, label: "Lauren\nF.\nKlein", shape: "circle"},
+
+    // Amie Hamraie
+    { id: 51, label: "Amie\nHamraie", shape: "circle"},
+    { id: 52, label: "Crip\nTechnoscience\nManifesto"},
+
+    // Kelly Fritsch
+    { id: 53, label: "Kelly\nFritsch", shape: "circle"},
+
+    // Laura Forlano
+    { id: 54, label: "Laura\nForlano", shape: "circle"},
+    { id: 55, label: "Hacking the\nFeminist Disabled\nBody"},
+
+    // Beth Ann Pentney
+    { id: 56, label: "Beth Ann\nPentney", shape: "circle"},
+    { id: 57, label: "Feminism, Activism\nand Knitting"},
+
+    // Ann Cvetkovich
+    { id: 58, label: "Ann\nCvetkovich", shape: "circle"},
+    { id: 59, label: "Depression:\nA Public Feeling"},
+
+    // Cyd Cipolla
+    { id: 60, label: "Cyd\nCipolla", shape: "circle"},
+    { id: 61, label: "Build It Better"},
+
+    // Annemarie Mol
+    { id: 62, label: "Annemarie\nMol", shape: "circle"},
+    { id: 63, label: "Care\nand its\nValues"},
+    { id: 93, label: "Embodied Action\nEnacted Bodies"},
+
+    // Shira Chess
+    { id: 64, label: "Shira\nChess", shape: "circle"},
+    { id: 65, label: "Play Like\na Feminist"},
+
+    // Susan Leigh Star
+    { id: 66, label: "Susan Leigh\nStar", shape: "circle"},
+    { id: 67, label: "Ethnography\nof\nInfrastructure"},
+
+    // Ara Wilson
+    { id: 68, label: "Ara\nWilson", shape: "circle"},
+    { id: 69, label: "Infrastructure\nof\nIntimacy"},
+
+    // Gilles Deleuze
+    { id: 70, label: "Gilles\nDeleuze", shape: "circle"},
+    { id: 71, label: "A Thousand\nPlateaus"},
+    { id: 75, label: "Cinema 2"},
+    { id: 89, label: "Postscript\non\nControl Societies"},
+
+    // Felix Guattari
+    { id: 72, label: "Félix\nGuattari", shape: "circle"},
+
+    // Deboleena Roy
+    { id: 73, label: "Deboleena\nRoy", shape: "circle"},
+    { id: 74, label: "Molecular\nFeminisms"},
+
+    // Michel Foucault
+    { id: 76, label: "Michel\nFoucault", shape: "circle"},
+    { id: 77, label: "Archaeology\nof\nKnowledge"},
+    { id: 80, label: "History\nof\nSexuality"},
+
+    // Silvia Federici
+    { id: 78, label: "Silvia\nFederici", shape: "circle"},
+    { id: 79, label: "Caliban\nand the\nWitch"},
+    { id: 81, label: "Wages Against\nHousework"},
+
+    // Betty Friedan
+    { id: 82, label: "Betty\nFriedan", shape: "circle"},
+    { id: 83, label: "The Feminine\nMystique"},
+
+    // Judith Butler
+    { id: 84, label: "Judith\nButler", shape: "circle"},
+    { id: 85, label: "Gender Trouble"},
+    { id: 86, label: "Undoing Gender"},
+
+    // Jasbir Puar
+    { id: 87, label: "Jasbir\nPuar", shape: "circle"},
+    { id: 88, label: "Right to Maim"},
+
+    // Sarah Ahmed
+    { id: 91, label: "Sarah\nAhmed", shape: "circle"},
+    { id: 92, label: "Living\na\nFeminist Life"},
+
+    // Bruno Latour
+    { id: 94, label: "Bruno\nLatour", shape: "circle"},
+    { id: 95, label: "Science\nIn Action"},
+
+    ]);
+
+    // create an array with edges
+    var edges = new vis.DataSet([
+    { from: 1, to: 2 , arrows: "to"},
+    { from: 1, to: 3 , arrows: "to"},
+    { from: 4, to: 5 , arrows: "to"},
+    { from: 4, to: 6 , arrows: "to"},
+    { from: 4, to: 7 , arrows: "to"},
+    { from: 4, to: 8 , arrows: "to"},
+    { from: 4, to: 9 , arrows: "to"},
+    { from: 10, to: 11 , arrows: "to"},
+    { from: 5, to: 11 , arrows: "to"},
+    { from: 7, to: 11 , arrows: "to"},
+    { from: 10, to: 12 , arrows: "to"},
+    { from: 13, to: 8 , arrows: "to"},
+    { from: 8, to: 13 , arrows: "to"},
+    { from: 14, to: 15 , arrows: "to"},
+    { from: 16, to: 17 , arrows: "to"},
+    { from: 15, to: 17 , arrows: "to"},
+    { from: 18, to: 19 , arrows: "to"},
+    { from: 5, to: 19 , arrows: "to"},
+    { from: 7, to: 3 , arrows: "to"},
+    { from: 20, to: 21 , arrows: "to"},
+    { from: 22, to: 23 , arrows: "to"},
+    { from: 26, to: 27 , arrows: "to"},
+    { from: 28, to: 27 , arrows: "to"},
+    { from: 29, to: 30 , arrows: "to"},
+    { from: 31, to: 32 , arrows: "to"},
+    { from: 33, to: 34 , arrows: "to"},
+    { from: 35, to: 36 , arrows: "to"},
+    { from: 37, to: 38 , arrows: "to"},
+    { from: 39, to: 40 , arrows: "to"},
+    { from: 41, to: 42 , arrows: "to"},
+    { from: 43, to: 6, arrows: "to"},
+    { from: 44, to: 45, arrows: "to"},
+    { from: 46, to: 47, arrows: "to"},
+    { from: 48, to: 49, arrows: "to"},
+    { from: 50, to: 49, arrows: "to"},
+    { from: 51, to: 52, arrows: "to"},
+    { from: 53, to: 52, arrows: "to"},
+    { from: 54, to: 55, arrows: "to"},
+    { from: 56, to: 57, arrows: "to"},
+    { from: 58, to: 59, arrows: "to"},
+    { from: 60, to: 61, arrows: "to"},
+    { from: 62, to: 63, arrows: "to"},
+    { from: 64, to: 65, arrows: "to"},
+    { from: 66, to: 67, arrows: "to"},
+    { from: 68, to: 69, arrows: "to"},
+    { from: 5, to: 21, arrows: "to"},
+    { from: 7, to: 30, arrows: "to"},
+    { from: 9, to: 30, arrows: "to"},
+    { from: 7, to: 6, arrows: "to"},
+    { from: 70, to: 71, arrows: "to"},
+    { from: 72, to: 71, arrows: "to"},
+    { from: 73, to: 74, arrows: "to"},
+    { from: 74, to: 15, arrows: "to"},
+    { from: 70, to: 75, arrows: "to"},
+    { from: 75, to: 11, arrows: "to"},
+    { from: 71, to: 74, arrows: "to"},
+    { from: 76, to: 77, arrows: "to"},
+    { from: 78, to: 79, arrows: "to"},
+    { from: 77, to: 11, arrows: "to"},
+    { from: 76, to: 80, arrows: "to"},
+    { from: 80, to: 79, arrows: "to"},
+    { from: 79, to: 45, arrows: "to"},
+    { from: 78, to: 81, arrows: "to"},
+    { from: 82, to: 83, arrows: "to"},
+    { from: 83, to: 81, arrows: "to"},
+    { from: 83, to: 49, arrows: "to"},
+    { from: 84, to: 85, arrows: "to"},
+    { from: 84, to: 86, arrows: "to"},
+    { from: 85, to: 21, arrows: "to"},
+    { from: 86, to: 47, arrows: "to"},
+    { from: 7, to: 47, arrows: "to"},
+    { from: 87, to: 88, arrows: "to"},
+    { from: 70, to: 89, arrows: "to"},
+    { from: 89, to: 88, arrows: "to"},
+    { from: 88, to: 52, arrows: "to"},
+    { from: 7, to: 52, arrows: "to"},
+    { from: 7, to: 55, arrows: "to"},
+    { from: 20, to: 90, arrows: "to"},
+    { from: 90, to: 42, arrows: "to"},
+    { from: 91, to: 92, arrows: "to"},
+    { from: 92, to: 40, arrows: "to"},
+    { from: 85, to: 92, arrows: "to"},
+    { from: 92, to: 59, arrows: "to"},
+    { from: 90, to: 61, arrows: "to"},
+    { from: 92, to: 65, arrows: "to"},
+    { from: 80, to: 69, arrows: "to"},
+    { from: 62, to: 93, arrows: "to"},
+    { from: 1, to: 93, arrows: "to"},
+    { from: 94, to: 95, arrows: "to"},
+    { from: 95, to: 2, arrows: "to"},
+    { from: 95, to: 67, arrows: "to"},
+    ]);
+
+    // create a network
+    var container = document.getElementById("mynetwork");
+    var data = {
+    nodes: nodes,
+    edges: edges,
+    };
+    var options = {
+        nodes: {
+            shape: "box",
+            color: "black",
+            font: {color: "white"}
+        }
+    };
+    var network = new vis.Network(container, data, options);
+</script>
